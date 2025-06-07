@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+  <h2>Bienvenida al Panel</h2>
+  <button onclick="irAlJuego()">Ir al juego</button>
+  <button onclick="cerrarSesion()">Cerrar sesión</button>
+
+  <script>
+    // Verifica si hay sesión activa
+    if (localStorage.getItem("logeado") !== "true") {
+      alert("No has iniciado sesión");
+      window.location.href = "login.html";
+    }
+
+    function irAlJuego() {
+      // Redirige al juego Unity WebGL
+      window.location.href = "game/index.html";
+    }
+
+    function cerrarSesion() {
+      localStorage.removeItem("logeado");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
